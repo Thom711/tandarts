@@ -4,8 +4,6 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { useEffect } from 'react/cjs/react.development';
 import { useSelector, useDispatch } from 'react-redux';
 import { add_dentist, add_assistant, add_patient, add_appointment } from './actions';
-import peopleData from './data/peopleData';
-
 
 const App = () => {
     const dispatch = useDispatch();
@@ -19,29 +17,10 @@ const App = () => {
 
     useEffect(() => {
         // initialize state
-        loadDentists(peopleData('dentists'));
-        loadAssistants(peopleData('assistants'));
-        loadPatients(peopleData('patients'));
-        generateAppointments(150);
+
+
+        //generateAppointments(150);
     }, []);
-
-    const loadDentists = (dentists) => {
-        dentists.map((dentist) => {
-            return { ...dentist, isSick: false, skills: []}
-        }).forEach((dentist) => dispatch(add_dentist(dentist)))
-    };
-
-    const loadAssistants = (assistants) => {
-        assistants.map((assistant) => {
-            return {...assistant, isSick: false}
-        }).forEach((assistant) => dispatch(add_assistant(assistant)));
-    };
-
-    const loadPatients = (patients) => {
-        patients.map((patient) => {
-            return {...patient, isSick: false}
-        }).forEach((patient) => dispatch(add_patient(patient)));
-    };
 
     const generateAppointments = (howManyAppointments) => {
         for (let i = 1; i <= howManyAppointments; i++) {
