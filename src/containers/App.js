@@ -4,7 +4,9 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { useEffect } from 'react/cjs/react.development';
 import { useSelector, useDispatch } from 'react-redux';
 import { add_appointment, set_id } from '../actions';
-import Calendar from './Calendar'
+import Calendar from './Calendar';
+import Day from './Day';
+import Home from '../components/Home';
 
 const App = () => {
     const dispatch = useDispatch();
@@ -77,10 +79,10 @@ const App = () => {
                             <Calendar />
                         </Route>
                         <Route path="/day">
-                            {/* <Day appointments={this.state.appointments.filter(app => app.day === 1)} /> */}
+                            <Day appointments={appointments.filter(app => app.day === 1)} />
                         </Route>
                         <Route path="/">
-                            {/* <Home /> */}
+                            <Home />
                         </Route>
                     </Switch>
                 </main>
