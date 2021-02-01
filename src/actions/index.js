@@ -25,3 +25,10 @@ export const add_appointment = (appointment) => {
         payload: appointment
     };
 };
+
+export const set_id = (value) => {
+    return {
+        type: "SET_ID",
+        payload: value
+    };
+};
