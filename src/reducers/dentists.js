@@ -1,4 +1,43 @@
-const dentistReducer = (state = [], action) => {    
+const dentists = [
+    {
+        id: 1,
+        firstName: 'Aad',
+        lastName: 'Groen',
+        phoneNumber: '06-12345678',
+        email: 'aad.groen@tandartspraktijkbvt.nl',
+        isSick: false,
+        skills: []
+    },
+    {
+        id: 2,
+        firstName: 'Teun',
+        lastName: 'de Wit',
+        phoneNumber: '06-2345678',
+        email: 'teun.dewit@tandartspraktijkbvt.nl',
+        isSick: false,
+        skills: []
+    },
+    {
+        id: 3,
+        firstName: 'Mirthe',
+        lastName: 'Meijer',
+        phoneNumber: '06-98765432',
+        email: 'mirthe.meijer@tandartspraktijkbvt.nl',
+        isSick: false,
+        skills: []
+    },
+    {
+        id: 4,
+        firstName: 'Lisa',
+        lastName: 'Kok',
+        phoneNumber: '06-87654321',
+        email: 'lisa.kok@tandartspraktijkbvt.nl',
+        isSick: false,
+        skills: []
+    }
+];
+
+const dentistReducer = (state = dentists, action) => {    
     switch(action.type) {
         case "ADD_DENTIST" :
             return  [...state, action.payload];
