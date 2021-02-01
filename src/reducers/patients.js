@@ -412,9 +412,15 @@ const patientReducer = (state = patients, action) => {
             });
 
             return newState;
-        case "MAKE_PATIENT_SICK":
-            // find dentist with given id. change dentist state to isSick
-            return state;
+        case "MAKE_PATIENT_SICK" :
+          const sickState = state.filter((patient) => {
+              if (patient.id === action.payload) {
+                  patient.isSick = !patient.isSick;
+              }
+              return patient;
+          });
+
+          return sickState;
         default:
             return state;
     };

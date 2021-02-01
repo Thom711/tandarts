@@ -19,7 +19,7 @@ const AppointmentInDay = (props) => {
     if (currentAssistant.length > 0) { isThereAnAssistant = true };
 
     return (
-        <li className="appointment">
+        <li className={currentDentist[0].isSick ? "appointment-sick" : "appointment"}>
             <div className="time">{format_time(props.time)}</div>
             <div className="patient">Patient: {currentPatient[0].firstName} {currentPatient[0].lastName}</div>
             <div className="dentist">Tandarts: {currentDentist[0].firstName} {currentDentist[0].lastName}</div>

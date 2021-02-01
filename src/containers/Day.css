@@ -9,6 +9,13 @@
   margin-bottom: 20px;
 }
 
+.dayview .appointment-sick {
+  border: 2px solid grey;
+  width: 60%;
+  margin-bottom: 20px;
+  background-color: red;
+}
+
 .dayview .time,
 .dayview .patient {
   height: 30px;

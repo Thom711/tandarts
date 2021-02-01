@@ -48,8 +48,15 @@ const dentistReducer = (state = dentists, action) => {
 
             return newState;
         case "MAKE_DENTIST_SICK" :
-            // find dentist with given id. change dentist state to isSick
-            return state;
+
+            const sickState = state.filter((dentist) => {
+                if (dentist.id === action.payload) {
+                    dentist.isSick = !dentist.isSick;
+                }
+                return dentist;
+            });
+
+            return sickState;
         default :
             return state;
     };
